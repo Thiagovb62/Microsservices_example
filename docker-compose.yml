@@ -13,7 +13,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=password
 
   loans:
-    image: thiagovb62/loans:s4
+    image: thiago62/loans:s4
     ports:
       - "8081:800"
     environment:
@@ -22,7 +22,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=password
 
   cards:
-    image: thiagovb62/cards:s4
+    image: thiago62/cards:s4
     ports:
       - "8082:8080"
     environment:

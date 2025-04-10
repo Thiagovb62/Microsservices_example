@@ -1,0 +1,16 @@
+
+build:
+    name: qa
+    version: 1.0.0
+
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+accounts:
+  message: "Hello from QA"
+  contactDetail:
+    name: "QA Contact"
+    email: "qa@gmail.com"
+

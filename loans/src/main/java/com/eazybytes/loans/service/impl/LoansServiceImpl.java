@@ -1,6 +1,7 @@
 package com.eazybytes.loans.service.impl;
 
 import com.eazybytes.loans.constants.LoansConstants;
+import com.eazybytes.loans.dto.AccountsQaDTO;
 import com.eazybytes.loans.dto.LoansDto;
 import com.eazybytes.loans.entity.Loans;
 import com.eazybytes.loans.exception.LoanAlreadyExistsException;
@@ -9,6 +10,7 @@ import com.eazybytes.loans.mapper.LoansMapper;
 import com.eazybytes.loans.repository.LoansRepository;
 import com.eazybytes.loans.service.ILoansService;
 import lombok.AllArgsConstructor;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

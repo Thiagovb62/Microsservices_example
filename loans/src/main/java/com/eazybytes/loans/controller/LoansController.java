@@ -1,7 +1,7 @@
 package com.eazybytes.loans.controller;
 
 import com.eazybytes.loans.constants.LoansConstants;
-import com.eazybytes.loans.dto.AccountsQaDTO;
+import com.eazybytes.loans.dto.LoansContactInfoQaDTO;
 import com.eazybytes.loans.dto.ErrorResponseDto;
 import com.eazybytes.loans.dto.LoansDto;
 import com.eazybytes.loans.dto.ResponseDto;
@@ -40,7 +40,7 @@ public class LoansController {
     private ILoansService iLoansService;
 
     @Autowired
-    private AccountsQaDTO accountsQaDTO;
+    private LoansContactInfoQaDTO loansContactInfoQaDTO;
     @Autowired
     private Environment environment;
 
@@ -173,10 +173,10 @@ public class LoansController {
         }
     }
 
-    @GetMapping("/accounts/qa")
-    public ResponseEntity< AccountsQaDTO> getAccountQaDetails(){
+    @GetMapping("loans/qa")
+    public ResponseEntity<LoansContactInfoQaDTO> getAccountQaDetails(){
         return ResponseEntity.status(HttpStatus.OK)
-                .body(accountsQaDTO);
+                .body(loansContactInfoQaDTO);
     }
 
 }

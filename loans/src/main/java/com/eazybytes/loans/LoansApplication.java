@@ -1,6 +1,6 @@
 package com.eazybytes.loans;
 
-import com.eazybytes.loans.dto.AccountsQaDTO;
+import com.eazybytes.loans.dto.LoansContactInfoQaDTO;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaRepositories("com.eazybytes.loans.repository")
 @EntityScan("com.eazybytes.loans.model")*/
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
-@EnableConfigurationProperties(value = AccountsQaDTO.class)
+@EnableConfigurationProperties(value = LoansContactInfoQaDTO.class)
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Loans microservice REST API Documentation",

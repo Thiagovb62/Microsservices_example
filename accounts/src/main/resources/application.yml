@@ -21,3 +21,13 @@ spring:
     show-sql: true
   config:
     import: "configserver:http://localhost:8071/"
+
+Management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+

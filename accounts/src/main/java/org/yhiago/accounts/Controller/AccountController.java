@@ -1,22 +1,23 @@
 package org.yhiago.accounts.Controller;
 
-import jakarta.persistence.GeneratedValue;
 import jakarta.transaction.Transactional;
-import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.yhiago.accounts.Constants.AccountsConstants;
+import org.yhiago.accounts.Dto.AccountsContactInfoDto;
 import org.yhiago.accounts.Dto.CustomerDto;
 import org.yhiago.accounts.Dto.ResponseDto;
-import org.yhiago.accounts.Mapper.CustomerMapper;
 import org.yhiago.accounts.Service.IAccountsService;
 
 @RestController
-@RequestMapping(path = "/api/v1/accounts",
-        consumes = "application/json",
-        produces = "application/json")
+@RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 public class AccountController {
+
+    @Autowired
+    private AccountsContactInfoDto accountsContactInfoDto;
 
     private final IAccountsService accountsService;
 
@@ -53,6 +54,13 @@ public class AccountController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new ResponseDto(
                 AccountsConstants.STATUS_200,
                 AccountsConstants.MESSAGE_20));
+    }
+
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDto);
     }
 
 

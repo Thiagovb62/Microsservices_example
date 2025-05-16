@@ -9,6 +9,17 @@ spring:
         native:
           #search-locations: "classpath:/config"
           search-locations: "file:///C://Users//mrsil//Documents//config"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
 server:
   port: 8071
+
+Management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

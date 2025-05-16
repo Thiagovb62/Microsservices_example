@@ -20,12 +20,14 @@ spring:
     show-sql: true
   config:
     import: "configserver:http://localhost:8071/"
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: "guest"
+    password: "guest"
 
 Management:
   endpoints:
     web:
       exposure:
         include: "*"
-  endpoint:
-    health:
-      show-details: always
